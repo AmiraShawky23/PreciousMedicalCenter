@@ -8,8 +8,184 @@
     --light-black: #262627;
 
 }
+@font-face {
+    font-family: 'Apercu-Light';
+    src: url('./fonts/Apercu-Light.eot');
+    src: url('./fonts/Apercu-Light.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Apercu-Light.woff2') format('woff2'),
+        url('./fonts/Apercu-Light.woff') format('woff'),
+        url('./fonts/Apercu-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Apercu-Medium';
+    src: url('./fonts/Apercu-Medium.eot');
+    src: url('./fonts/Apercu-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Apercu-Medium.woff2') format('woff2'),
+        url('./fonts/Apercu-Medium.woff') format('woff'),
+        url('./fonts/Apercu-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Apercu-Regular';
+    src: url('./fonts/Apercu-Regular.eot');
+    src: url('./fonts/Apercu-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Apercu-Regular.woff2') format('woff2'),
+        url('./fonts/Apercu-Regular.woff') format('woff'),
+        url('./fonts/Apercu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Apercu-Regular';
+    font-size: 18px;
+}
+img {
+    width: 100%;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+.nav {
+    width: 100%;
+    display: flex;
+    background: var(--main-white);
+}
+.nav-container {
+    width: 90%;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    max-width: 133px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+}
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    flex-direction: row;
+    /* max-width: 830px; */
+}
+.nav-list-item {
+    margin-right: 1.5rem;
+}
+.nav-list-item a {
+    color: var(--light-black);
+}
+.nav-list-item a:hover {
+    color: var(--main-blue);
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search {
+    max-width: 38px;
+    padding: 0.2rem;
+    display: flex;
+}
+.search svg {
+    cursor: pointer;
+    width: 100%;
+}
+.login {
+    margin-left: 1rem;
+}
+.primary-button {
+    color: var(--main-white);
+    background-color: var(--main-blue);
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 3rem;
+    font-family: 'Apercu-Medium';
+    cursor: pointer;
+}
+.close {
+    display: none;
+}
+.close svg, .menu svg {
+    cursor: pointer;
+}
+.menu {
+    display: none;
+}
+@media screen and (max-width: 1140px) {
+    * {
+        font-size: 13px;
+    }
+    .search {
+        max-width: 27px;
+    }
+    .logo {
+        max-width: 90px;
+    }
+}
+@media screen and (max-width: 786px) {
+    nav {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: var(--main-white);
+        flex-direction: column;
+        align-items: initial;
+        opacity: 1;
+        transition: top 2s ease-in-out, opacity 1s ease-in-out 1s;
+    }
+    .hidden {
+        top: -100vh;
+        opacity: 0;
+    }
+    .nav-list {
+        flex-direction: column;
+        width: 90%;
+        margin: 1rem auto;
+    }
+    .nav-list-item {
+        margin: 0.5rem 0;
+        border-bottom: var(--light-gray-text) solid 0.3px;
+        padding: 1rem 0 1.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    .actions {
+        width: 70%;
+        margin: 3rem auto;
+        justify-content: center;
+    }
+    .close {
+        display: block;
+        text-align: end;
+        margin: 2rem 2rem 0rem 2rem;
+    }
+    .menu {
+        display: block;
+    }
 }
