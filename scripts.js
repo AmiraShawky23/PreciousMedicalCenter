@@ -2,8 +2,8 @@
 function showMenu() {
     let nav = document.getElementsByTagName('nav');
     nav[0].classList.remove('hidden');
-}
-function hideMenu() {
+  }
+  function hideMenu() {
     let nav = document.getElementsByTagName('nav');
     nav[0].classList.add('hidden');
 }
@@ -12,7 +12,7 @@ function showForm() {
   let form = document.getElementsByClassName('signin-form-container');
   form[0].classList.add('show');
 }
-function hideMenu() {
+function hideForm() {
   let form = document.getElementsByClassName('signin-form-container');
   form[0].classList.remove('show');
 }

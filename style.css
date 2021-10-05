@@ -17,7 +17,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 101;
+    z-index: 102;
     overflow: hidden;
     background: var(--main-white);
     -ms-overflow-style: none;
@@ -32,7 +32,10 @@
     transform: translate(-50%, -50%);
     position: absolute;
   } 
-  
+  #contents {
+      overflow: hidden;
+      position: relative;
+  }
   .main div {
     margin: 7px;
     width: 20px;
@@ -219,7 +222,7 @@ nav {
         position: absolute;
         width: 100vw;
         height: 100vh;
-        z-index: 1;
+        z-index: 100;
         top: 0;
         left: 0;
         background: var(--main-white);
@@ -358,7 +361,7 @@ nav {
     width: 100%;
     min-height: 100vh;
     position: fixed;
-    z-index: 100;
+    z-index: 101;
     background: var(--main-white);
     display: flex;
     opacity: 0;
