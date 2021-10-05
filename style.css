@@ -8,6 +8,70 @@
     --light-black: #262627;
 
 }
+#load::-webkit-scrollbar {
+    display: none;
+  }
+#load {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 101;
+    overflow: hidden;
+    background: var(--main-white);
+    -ms-overflow-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  } 
+  
+  .main div {
+    margin: 7px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--main-blue);
+    border-radius: 50%;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+  }
+  
+  .one {
+    animation-name: load-one;
+  }
+  
+  @keyframes load-one {
+    30% {
+       transform: translateY(-50%);
+    }
+  }
+  
+  .two {
+    animation-name: load-two;
+  }
+  
+  @keyframes load-two {
+    50% {
+       transform: translateY(-50%);
+    }
+  }
+  
+  .three {
+    animation-name: load-three;
+  }
+  
+  @keyframes load-three {
+    70% {
+       transform: translateY(-50%);
+    }
+  }
 @font-face {
     font-family: 'Apercu-Light';
     src: url('./fonts/Apercu-Light.eot');
@@ -647,6 +711,166 @@ nav {
         width: 80%;
     }
 }
+/* home */
+.main-container {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+.image-container {
+    position: absolute;
+    z-index: 1;
+}
+.dots {
+    z-index: 2;
+}
+.booking-form-container {
+    position: absolute;
+    z-index: 3;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2rem);
+    padding: 3rem;
+    border-radius: 7px;
+    box-shadow: 10px 10px 20px rgba(65, 65, 65, 0.2);
+}
+.main-container .announcement {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background: var(--main-blue);
+    color: var(--main-white);
+}
+/* tabs */
+.tabs form button {
+    background: var(--main-blue);
+    color: var(--main-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.tabs form button svg {
+    margin-right: 1rem;
+}
+.tabs .checkbox-container {
+    display: flex;
+    margin-top: 1rem;
+}
+.tabs .checkbox-container .checkbox {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    color: var(--dark-gray-text);
+}
+.tabs .checkbox-container input {
+    margin-right: 0.5rem;
+    margin-top: 0.1rem;
+}
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+.input {
+    position: absolute;
+    opacity: 0;
+}
+
+.label {
+    width: 100%;
+    padding: 0.7rem 2rem;
+    background: var(--main-blue);
+    color: var(--main-white);
+    cursor: pointer;
+    font-weight: bold;
+    font-weight: normal;
+    font-size: 18px;
+    border-radius: 4px 4px 0px 0px;
+    transition: background 0.1s, color 0.1s;
+    margin-right: 1rem;
+}
+
+.label:hover {
+    background: #d8d8d8;
+}
+
+.label:active {
+    background: var(--main-blue);
+}
+
+.input:focus + .label {
+    z-index: 1;
+}
+
+.input:checked + .label {
+    background: var(--main-white);
+    color: var(--dark-gray-text);
+}
+
+.panel {
+    display: none;
+    padding: 2rem;
+    font-weight: normal;
+    background: #fff;
+    border: 0.5px solid var(--gray-border-one);
+    border-radius: 0px 4px 4px 4px;
+    width: 100%;
+}
+.panel .select-container {
+    display: flex;
+    align-items: center;
+}
+.panel form .select-container select:nth-child(3) {
+    margin-right: auto;
+}
+.panel form select {
+    color: var(--main-blue);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--gray-border-one);
+    margin-bottom: 0.5rem;
+    margin-right: 0.3rem;
+}
+
+@media (min-width: 600px) {
+    .label {
+         width: auto;
+    }
+
+    .panel {
+         order: 99;
+    }
+}
+
+.input:checked + .label + .panel {
+    display: block;
+}
+@media screen and (max-width: 786px) {
+    .booking-form-container {
+        width: 80%;
+        padding: 2rem;
+    }
+    .label {
+        margin-right: 0;
+        width: 100%;
+    }
+    .panel form .select-container select:nth-child(3),
+    .panel form .select-container select {
+        margin-right: 0;
+    }
+    .panel .select-container, .tabs .checkbox-container {
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .booking-form-container {
+        width: 50%;
+    }
+}
+
 /* animation */
 .fade {
   -webkit-animation-name: fade;
