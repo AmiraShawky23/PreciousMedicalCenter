@@ -7,6 +7,15 @@ function hideMenu() {
     let nav = document.getElementsByTagName('nav');
     nav[0].classList.add('hidden');
 }
+// signin form
+function showForm() {
+  let form = document.getElementsByClassName('signin-form-container');
+  form[0].classList.add('show');
+}
+function hideMenu() {
+  let form = document.getElementsByClassName('signin-form-container');
+  form[0].classList.remove('show');
+}
 // slideshow
 let slideIndex = 1;
 showSlides(slideIndex);
