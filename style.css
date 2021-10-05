@@ -19,7 +19,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Apercu-Medium';
     src: url('./fonts/Apercu-Medium.eot');
@@ -31,7 +30,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Apercu-Regular';
     src: url('./fonts/Apercu-Regular.eot');
@@ -56,6 +54,9 @@ img {
 a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
+}
+textarea {
+    resize: none;
 }
 button {
     border: none;
@@ -330,12 +331,12 @@ nav {
     margin: 0.5rem auto;
     font-size: 1rem;
 }
-.signin-form .form-container {
+.form-container {
     display: flex;
     align-items: center;
     justify-self: center;
 }
-.signin-form .form-container form {
+.form-container form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -344,15 +345,21 @@ nav {
     margin: 1rem auto;
     width: 100%;
 }
-.signin-form .form-container input::placeholder {
+.form-container input::placeholder,
+.form-container textarea::placeholder {
     color: var(--light-gray-text);
     font-size: 1rem;
 }
-.signin-form .form-container input:focus {
+.form-container input:focus,
+.form-container textarea:focus {
     /* border: 1px solid #DD22DD; */
     outline-color: var(--main-blue);
 }
-.signin-form .form-container input {
+.form-container textarea {
+    min-height: 100px;
+}
+.form-container textarea,
+.form-container input {
     font-size: 1rem;
     color: var(--dark-gray-text);
     border: 1px solid var(--gray-border-one);
@@ -361,7 +368,7 @@ nav {
     margin: 0.5rem 0;
     width: 100%;
 }
-.signin-form .form-container button {
+.form-container button {
     background: var(--main-blue);
     border-radius: 4px;
     width: 100%;
@@ -506,8 +513,38 @@ nav {
         width: 70%;
     }
 }
-@media screen and (max-width: 1140px) {
-    
+@media screen and (max-width: 1599.99px) {
+    .signin-form .signin-method svg {
+        width: 17px;
+    }
+    .signin-logo {
+        width: 20%;
+    }
+    .signin-bref h2 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+    .signin-bref .subtitle {
+        font-size: 1rem;
+    }
+    .review p {
+        font-size: 0.8rem;
+    }
+    .signin-form h3, .signin-bref h2 {
+        font-size: 2rem;
+    }
+    .signin-form .form-container form {
+        margin: 0.5rem auto;
+    }
+    .signin-form .form-container input {
+        font-size: 0.7rem;
+    }
+    .or {
+        margin-bottom: 0.5rem;
+    }
+    .signin-form .signin-method {
+        padding: 0.5rem;
+    }
 }
 @media screen and (max-width: 786px) {
     .signin-bref {
@@ -522,9 +559,94 @@ nav {
         width: 100%;
         min-height: 100vh;
     }
+    .signin-bref h2 {
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+    }
+    .signin-form h3, .signin-bref h2 {
+        font-size: 2.5rem;
+    }
 }
 
-
+/* booking */
+.booking-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.booking-container .right-container {
+    width: 50%;
+    z-index: 2;
+}
+.booking-container .right-container h3 {
+    font-size: 2rem;
+    color: var(--main-blue);
+    margin-bottom: 1rem;
+}
+.booking-container .right-container p {
+    font-size: 1rem;
+    color: var(--main-blue);
+}
+.booking-container .right,
+.booking-container .left {
+    width: 70%;
+    margin: 2rem auto;
+    text-align: center;
+}
+.booking-container .left-container {
+    width: 50%;
+}
+.booking-container .left {
+    text-align: left;
+}
+.booking-container .left-container h2 {
+    font-size: 2.5rem;
+    color: var(--light-black);
+    margin-bottom: 1rem;
+}
+.booking-container .left-container h6 {
+    color: var(--main-blue);
+    font-size: 1rem;
+    font-weight: normal;
+}
+.booking-container .left-container .character-conaiter {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+.booking-container .left-container .character-conaiter p {
+    color: var(--light-gray-text);
+}
+.leaf svg {
+    width: 100%;
+}
+.leaf {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 30%;
+}
+@media screen and (max-width: 1140px) {
+    .booking-container .left-container .character-conaiter .character svg {
+        width: 100%;
+        height: auto;
+    }
+    .booking-container .left-container .character-conaiter .character {
+        width: 100%;
+        margin: 0 auto;
+        margin-right: 1rem;
+    }
+    .booking-container {
+        flex-direction: column;
+    }
+    .booking-container .right-container, .booking-container .left-container {
+        width: 100%;
+    }
+    .booking-container .right-container .right,.booking-container .left-container .left{
+        width: 80%;
+    }
+}
 /* animation */
 .fade {
   -webkit-animation-name: fade;
